@@ -24,7 +24,7 @@ func main() {
 	nline := 0
 	for _, v := range str {
 		if v == 'n' && prev == '\\' {
-			nline ++
+			nline++
 			severallines = true
 		}
 		prev = v
@@ -41,11 +41,11 @@ func main() {
 			}
 
 			for i := 0; i < 8; i++ {
-				
+
 				for _, letter := range word {
 					res += GetLine(2 + int(letter-' ')*9 + i)
 				}
-				
+
 				fmt.Println(res)
 				res = ""
 			}
@@ -65,7 +65,7 @@ func main() {
 // Reading the file
 func GetLine(num int) string {
 	str := ""
-	f, e := os.Open("standard.txt")
+	f, e := os.Open("../fonts/thinkertoy.txt")
 	if e != nil {
 		fmt.Println(e.Error())
 		os.Exit(0)
